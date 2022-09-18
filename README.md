@@ -2,6 +2,8 @@
 
 ```sh
 asdf install
+yarn
+yarn dev
 ```
 
 > **Note**
