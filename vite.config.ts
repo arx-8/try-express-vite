@@ -5,10 +5,8 @@ import { VitePluginNode } from "vite-plugin-node"
 /**
  * @see https://github.com/axe-me/vite-plugin-node#get-started
  */
+// eslint-disable-next-line import/no-default-export
 export default defineConfig({
-  server: {
-    port: 30001,
-  },
   plugins: [
     ...VitePluginNode({
       adapter: "express",
@@ -18,5 +16,8 @@ export default defineConfig({
   resolve: {
     // for absolute path import
     alias: [{ find: "src", replacement: path.resolve(__dirname, "src") }],
+  },
+  server: {
+    port: 30001,
   },
 })
