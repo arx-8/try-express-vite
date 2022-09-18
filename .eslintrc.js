@@ -53,6 +53,7 @@ const config = {
         selector: "typeAlias",
       },
     ],
+    "@typescript-eslint/prefer-readonly-parameter-types": 0,
     camelcase: 0,
     "import/no-default-export": 2,
     "no-restricted-syntax": [

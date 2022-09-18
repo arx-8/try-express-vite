@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/explicit-member-accessibility */
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+/* eslint-disable jest/require-hook */
 import { describe, expect, it } from "vitest"
 
 /**
@@ -39,10 +42,11 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     /* eslint-disable jest/prefer-strict-equal */
     expect(new Protein("lemon")).toEqual({ flavor: "lemon" })
     expect(new Protein("lemon")).not.toStrictEqual({ flavor: "lemon" })
-    /* eslint-enable */
+    /* eslint-enable jest/prefer-strict-equal */
   })
 
   class Human {
+    // eslint-disable-next-line @typescript-eslint/parameter-properties
     constructor(private readonly name: string, private readonly age: number) {}
 
     public getGreet(): string {
@@ -74,7 +78,7 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     expect(new Human("taro", 20)).not.toBe(new Human("taro", 20))
     const classInstance = new Human("taro", 20)
     expect(classInstance).toBe(classInstance)
-    /* eslint-enable */
+    /* eslint-enable sort-keys-fix/sort-keys-fix */
   })
 
   it("toEqual is `deep equal`", () => {
@@ -102,7 +106,7 @@ describe("when in doubt, use `toStrictEqual`. It is the most reliable.", () => {
     expect(new Human("taro", 20)).toEqual(new Human("taro", 20))
     const classInstance = new Human("taro", 20)
     expect(classInstance).toEqual(classInstance)
-    /* eslint-enable */
+    /* eslint-enable jest/prefer-strict-equal */
   })
 })
 
@@ -117,7 +121,7 @@ describe("snapshot test", () => {
         "b": "b1",
       }
     `)
-    /* eslint-enable */
+    /* eslint-enable sort-keys-fix/sort-keys-fix */
   })
 })
 
