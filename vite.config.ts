@@ -1,3 +1,4 @@
+import path from "path"
 import { defineConfig } from "vite"
 import { VitePluginNode } from "vite-plugin-node"
 
@@ -14,4 +15,8 @@ export default defineConfig({
       appPath: "./src/index.ts",
     }),
   ],
+  resolve: {
+    // for absolute path import
+    alias: [{ find: "src", replacement: path.resolve(__dirname, "src") }],
+  },
 })
