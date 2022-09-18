@@ -2606,6 +2606,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-prefer-arrow-functions@npm:3.1.4":
+  version: 3.1.4
+  resolution: "eslint-plugin-prefer-arrow-functions@npm:3.1.4"
+  peerDependencies:
+    eslint: ">=5.0.0"
+  checksum: 581f1be4ea056d70aad1866ee16a0def7ecece050e03ff3bc2a6695b8bdca3751d6360fcd0e4efccd0068a0e0557b7ab36586a301afa38957acc8c58d293560c
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-promise@npm:6.0.1":
   version: 6.0.1
   resolution: "eslint-plugin-promise@npm:6.0.1"
@@ -6170,6 +6179,7 @@ __metadata:
     eslint-plugin-import: 2.26.0
     eslint-plugin-jest: 27.0.4
     eslint-plugin-n: 15.2.5
+    eslint-plugin-prefer-arrow-functions: 3.1.4
     eslint-plugin-promise: 6.0.1
     eslint-plugin-sort-destructure-keys: 1.4.0
     eslint-plugin-sort-keys-fix: 1.1.2

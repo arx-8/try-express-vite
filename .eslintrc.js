@@ -38,7 +38,12 @@ const config = {
   parserOptions: {
     project: "./tsconfig.json",
   },
-  plugins: ["sort-destructure-keys", "sort-keys-fix", "typescript-sort-keys"],
+  plugins: [
+    "prefer-arrow-functions",
+    "sort-destructure-keys",
+    "sort-keys-fix",
+    "typescript-sort-keys",
+  ],
   rules: {
     "@typescript-eslint/consistent-type-definitions": [2, "type"],
     "@typescript-eslint/naming-convention": [
@@ -64,6 +69,7 @@ const config = {
         selector: "TSEnumDeclaration",
       },
     ],
+    "prefer-arrow-functions/prefer-arrow-functions": 2,
     "prefer-template": 2,
     "sort-destructure-keys/sort-destructure-keys": 2,
     "sort-keys-fix/sort-keys-fix": 2,
