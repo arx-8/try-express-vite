@@ -1,3 +1,4 @@
 {
+  "name": "try-express-vite",
   "packageManager": "yarn@3.2.3"
 }
