@@ -1,0 +1,12 @@
+# See https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+.yarn/releases/** binary
+.yarn/plugins/** binary
+
+# Mark .zip files as binary to prevent git from trying to merge it
+*.zip binary
+
+# Mark .pnp.* as binary to prevent git from trying to merge it & generated to hide from github linguist
+/.pnp.* binary linguist-generated
+
+# Hide .yarn from GitHub's language detection
+/.yarn/** linguist-vendored
