@@ -7,9 +7,12 @@ services:
       context: ../
       dockerfile: ./dockerfiles/app/Dockerfile
     networks:
-      - app
+      - app-nw
     ports:
       - 30001:30001
+    depends_on:
+      db:
+        condition: service_healthy
 
   db:
     build:
@@ -22,9 +25,30 @@ services:
       - ./db/volume:/var/lib/mysql
       - ./db/init:/docker-entrypoint-initdb.d
     networks:
-      - app
+      - app-nw
     ports:
       - 30002:3306
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  schema-spy:
+    build:
+      dockerfile: ./schema-spy/Dockerfile
+    networks:
+      - app-nw
+    volumes:
+      - ./schema-spy/output:/output
+      - ./schema-spy/schemaspy.properties:/app/schemaspy.properties:ro
+    command: java -jar schemaspy.jar -debug
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles:
+      # for exclude from docker-compose up without args
+      - extra
 
 networks:
-  app:
+  app-nw:

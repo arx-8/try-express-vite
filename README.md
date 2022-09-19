@@ -46,12 +46,8 @@ SELECT * FROM app_db.movies;
 ### Generate DB schema docs
 
 ```s
-docker run \
-    --rm \
-    --net=host \
-    -v $PWD/docs/db-schema/output:/output \
-    -v $PWD/docs/db-schema/schemaspy.properties:/schemaspy.properties \
-    schemaspy/schemaspy:6.1.0
+docker-compose -f ./dockerfiles/docker-compose.yml up -d schema-spy
+open dockerfiles/schema-spy/output/index.html
 ```
 
 ### Tips
