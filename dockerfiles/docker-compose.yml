@@ -5,7 +5,7 @@ services:
     build:
       # For Dockerfile COPY
       context: ../
-      dockerfile: ./deployments/app/Dockerfile
+      dockerfile: ./dockerfiles/app/Dockerfile
     networks:
       - app
     ports:

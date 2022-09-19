@@ -85,7 +85,7 @@ web_modules/
 
 # Next.js build output
 .next
-out
+./out
 
 # Nuxt.js build / generate output
 .nuxt
@@ -134,5 +134,5 @@ dist
 # Project specific
 misc/*
 !misc/.gitkeep
-deployments/db/volume/*
-!deployments/db/volume/.gitkeep
+dockerfiles/db/volume/*
+!dockerfiles/db/volume/.gitkeep

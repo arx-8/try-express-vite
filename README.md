@@ -17,10 +17,10 @@ yarn dev
 ### Run all
 
 ```sh
-docker-compose -f ./deployments/docker-compose.yml up -d --build
+docker-compose -f ./dockerfiles/docker-compose.yml up -d --build
 
 # down
-docker-compose -f ./deployments/docker-compose.yml down
+docker-compose -f ./dockerfiles/docker-compose.yml down
 
 # (clean up garbages sometimes)
 docker image prune
@@ -29,7 +29,7 @@ docker image prune
 ### Run only DB
 
 ```sh
-docker-compose -f ./deployments/docker-compose.yml up -d db
+docker-compose -f ./dockerfiles/docker-compose.yml up -d db
 ```
 
 ### Connect DB
@@ -41,6 +41,17 @@ mysql -uroot -ptoor -h 127.0.0.1 -P 30002
 ```sql
 show databases;
 SELECT * FROM app_db.movies;
+```
+
+### Generate DB schema docs
+
+```s
+docker run \
+    --rm \
+    --net=host \
+    -v $PWD/docs/db-schema/output:/output \
+    -v $PWD/docs/db-schema/schemaspy.properties:/schemaspy.properties \
+    schemaspy/schemaspy:6.1.0
 ```
 
 ### Tips
@@ -57,5 +68,5 @@ modify the Dockerfile
 and exec the following cmd
 
 ```sh
-docker exec -it deployments-app-1 /busybox/sh
+docker exec -it dockerfiles-app-1 /busybox/sh
 ```
