@@ -11,5 +11,20 @@ services:
     ports:
       - 30001:30001
 
+  db:
+    build:
+      dockerfile: ./db/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: app_db
+      TZ: Asia/Tokyo
+    volumes:
+      - ./db/volume:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
+    networks:
+      - app
+    ports:
+      - 30002:3306
+
 networks:
   app:

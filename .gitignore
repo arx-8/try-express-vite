@@ -134,3 +134,5 @@ dist
 # Project specific
 misc/*
 !misc/.gitkeep
+deployments/db/volume/*
+!deployments/db/volume/.gitkeep

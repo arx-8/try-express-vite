@@ -2,6 +2,7 @@
   "editor.formatOnSave": true,
   "files.associations": {
     ".env.*": "dotenv",
+    "my.cnf": "ini",
     "yarn.lock": "yaml"
   },
   "files.encoding": "utf8",

@@ -26,6 +26,23 @@ docker-compose -f ./deployments/docker-compose.yml down
 docker image prune
 ```
 
+### Run only DB
+
+```sh
+docker-compose -f ./deployments/docker-compose.yml up -d db
+```
+
+### Connect DB
+
+```sh
+mysql -uroot -ptoor -h 127.0.0.1 -P 30002
+```
+
+```sql
+show databases;
+SELECT * FROM app_db.movies;
+```
+
 ### Tips
 
 #### Explorer inside the container
