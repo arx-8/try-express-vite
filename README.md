@@ -40,6 +40,8 @@ mysql -uroot -ptoor -h 127.0.0.1 -P 30002
 
 ```sql
 show databases;
+use app_db;
+show tables;
 SELECT * FROM app_db.movies;
 ```
 
